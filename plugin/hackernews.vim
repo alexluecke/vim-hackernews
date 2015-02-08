@@ -24,3 +24,6 @@ command! HackerNews python hacker_news()
 
 
 au! BufRead,BufNewFile *.hackernews set filetype=hackernews
+
+au FileType hackernews map [[ ?^ *\d\+\.<CR>:let @/ = ""<CR>
+au FileType hackernews map ]] /^ *\d\+\.<CR>:let @/ = ""<CR>
