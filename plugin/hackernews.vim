@@ -24,22 +24,3 @@ command! HackerNews python hacker_news()
 
 
 au! BufRead,BufNewFile *.hackernews set filetype=hackernews
-
-function! s:NextSection(backwards)
-
-	" go to end of matching word
-	let flags = 'e'
-
-	let pattern = '^ *\d\+\. .'
-
-	if a:backwards
-		let dir = '?'
-	else
-		let dir = '/'
-	endif
-
-	execute 'silent normal! ' . dir . pattern . dir . flags . "\r"
-endfunction
-
-au FileType hackernews map [[ :call <SID>NextSection(1)<CR>
-au FileType hackernews map ]] :call <SID>NextSection(0)<CR>
