@@ -100,7 +100,7 @@ def hacker_news_link(external=False):
                   item['comments_count']))
         if item['url'].find("item?id=") == 0:
             item['url'] = "http://news.ycombinator.com/" + item['url']
-        bwrite("[%s]" % item['url'])
+        bwrite("[ %s ]" % item['url'])
         bwrite("")
         bwrite("")
         print_comments(item['comments'])
